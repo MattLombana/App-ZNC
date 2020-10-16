@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  znc:
+    image: znc:latest
+    container_name: znc
+    hostname: znc
+    restart: unless-stopped
+    ports:
+      - "6697:6697"
+    volumes:
+      - ../Data/znc-data:/znc-data
+      - ../Config/znc.conf:/znc-data/configs/znc.conf
